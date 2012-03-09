@@ -1,2 +1,2 @@
-chat-format: <*red*name> *message
-default-name-color: 
+chat-format: <*name*white> *message
+default-name-color: green
