@@ -1,2 +1,2 @@
-chat-format: <*name*white> *message
-default-name-color: green
+chat-format: <$name$white> $message
+default-name-color: white
