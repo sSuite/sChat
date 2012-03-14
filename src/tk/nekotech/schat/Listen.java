@@ -6,24 +6,23 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerChatEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 
-public class Listen implements Listener {
+public class Listen implements Listener{
 
-	private final sChat plugin;
+	private final SChat plugin;
 
-	public Listen(sChat instance) {
+	public Listen(SChat instance){
 		this.plugin = instance;
 	}
 
 	@EventHandler(ignoreCancelled = true, priority = EventPriority.HIGHEST)
-	public void playerChat(PlayerChatEvent event) {
+	public void playerChat(PlayerChatEvent event){
 		event.setCancelled(true);
-		String formatted = plugin.getFormattedMessage(event.getPlayer(), event.getMessage());
+		final String formatted = plugin.getFormattedMessage(event.getPlayer(), event.getMessage());
 		plugin.getServer().broadcastMessage(formatted);
 	}
 
 	@EventHandler
-	public void playerJoin(PlayerJoinEvent event) {
+	public void playerJoin(PlayerJoinEvent event){
 		event.getPlayer().setDisplayName(plugin.replacePlainChatColor(plugin.getConfig().getString("default-name-color")) + event.getPlayer().getName());
 	}
-
 }
