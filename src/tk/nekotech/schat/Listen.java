@@ -24,5 +24,6 @@ public class Listen implements Listener{
 	@EventHandler
 	public void playerJoin(PlayerJoinEvent event){
 		event.getPlayer().setDisplayName(plugin.replacePlainChatColor(plugin.getConfig().getString("default-name-color")) + event.getPlayer().getName());
+		event.getPlayer().setPlayerListName(plugin.replacePlainChatColor(plugin.getConfig().getString("default-name-color")) + event.getPlayer().getName());
 	}
 }

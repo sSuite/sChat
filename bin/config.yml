@@ -1,2 +1,8 @@
 chat-format: <$name$white> $message
 default-name-color: white
+players:
+    exampleName:
+        prefix: $red[Noob]
+        suffix: $black[suffix]$white
+        name-color: green
+        chat-color: white

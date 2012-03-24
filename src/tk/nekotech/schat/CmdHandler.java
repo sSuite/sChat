@@ -51,6 +51,7 @@ public class CmdHandler{
 		i.sendMessage(darkred + "/tell");
 		i.sendMessage(darkred + "Aliases: /pm, /whisper");
 		i.sendMessage(gold + "Usage: /tell [player] [message]");
-		i.sendMessage(gold + "Without arguments");
+		i.sendMessage(gold + "Privately messages player the specified message.");
+		i.sendMessage(gold + "If only the player is specified, pm mode is turned on. This");
 	}
 }
