@@ -13,6 +13,7 @@ public class PlayerCheck{
 
 	public Player check(String n){
 		Player[] list = p.getServer().getOnlinePlayers();
+		@SuppressWarnings("unused")
 		String argstr = "";
 		int cnt = 0;
 		for (int i = 1; i < list.length; ++i)

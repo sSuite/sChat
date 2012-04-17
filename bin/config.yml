@@ -1,8 +1,8 @@
-chat-format: <$name$white> $message
+chat-format: <$prefix$name$suffix> $message
 default-name-color: white
 players:
-    exampleName:
-        prefix: $red[Noob]
-        suffix: $black[suffix]$white
+    Smiley43210:
+        prefix: $red[Example]
+        suffix: $blue[suffix]$white
         name-color: green
         chat-color: white
