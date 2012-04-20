@@ -15,10 +15,6 @@ public class Listen implements Listener{
 		this.plugin = instance;
 	}
 
-	public Listen(Formatter instance){
-		this.formatter = instance;
-	}
-
 	@EventHandler(ignoreCancelled = true, priority = EventPriority.HIGHEST)
 	public void playerChat(PlayerChatEvent event){
 		event.setCancelled(true);

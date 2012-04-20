@@ -9,7 +9,6 @@ public class Formatter{
 
 	public Formatter(SChat p){
 		this.plugin = p;
-		new Listen(this);
 	}
 
 	public String Format(Player player, String message){

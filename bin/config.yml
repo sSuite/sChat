@@ -1,3 +1,6 @@
+cfgV: "0.0.1"
+firstRun: true
+sendStats: true
 chat-format: <$prefix$name$suffix> $message
 default-name-color: white
 players:
