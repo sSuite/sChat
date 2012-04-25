@@ -5,7 +5,7 @@ import org.bukkit.entity.Player;
 
 public class Formatter{
 
-	private final SChat plugin;
+	private SChat plugin;
 
 	public Formatter(SChat p){
 		this.plugin = p;

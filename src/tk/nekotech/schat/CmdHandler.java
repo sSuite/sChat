@@ -34,7 +34,7 @@ public class CmdHandler{
 	public boolean cmd(CommandSender i, Command j, String[] k){
 		cmd = j.getName();
 		if (isCmd(cmd, "pm") || isCmd(cmd, "tell") || isCmd(cmd, "whisper"))
-			if (k.length < 1){
+			if (k.length < 1){ /*TODO: Use dynamic expression and check if whisper mode should be turned off*/
 				help(i);
 				return true;
 			}
@@ -50,8 +50,11 @@ public class CmdHandler{
 	private void help(CommandSender i){
 		i.sendMessage(darkred + "/tell");
 		i.sendMessage(darkred + "Aliases: /pm, /whisper");
-		i.sendMessage(gold + "Usage: /tell [player] [message]");
+		i.sendMessage(gold + "Usage: /tell <player> [message]");
 		i.sendMessage(gold + "Privately messages player the specified message.");
-		i.sendMessage(gold + "If only the player is specified, pm mode is turned on. This");
+		i.sendMessage(gold + "If only the player is specified, whisper mode is turned on.");
+		i.sendMessage(gold + "While whisper mode is on, anything you say will be sent");
+		i.sendMessage(gold + "to the player specified when whisper mode was turned on.");
+		i.sendMessage(gold + "Use \"/tell\" to turn whisper mode off.");
 	}
 }

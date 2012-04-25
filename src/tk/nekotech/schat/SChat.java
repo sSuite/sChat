@@ -13,6 +13,7 @@ public class SChat extends JavaPlugin{
 	private final Listen listener = new Listen(this);
 	public String pversion;
 	public Logging log;
+	public ChatInformer Informer;
 
 	@Override
 	public void onEnable(){
@@ -26,6 +27,7 @@ public class SChat extends JavaPlugin{
 		saveConfig();
 		String ver = pdf.getVersion();
 		log.info("sChat version " + ver + " loaded!");
+		Informer = new ChatInformer(this);
 	}
 
 	@Override

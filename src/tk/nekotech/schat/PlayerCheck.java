@@ -16,11 +16,13 @@ public class PlayerCheck{
 		@SuppressWarnings("unused")
 		String argstr = "";
 		int cnt = 0;
+		/*
 		for (int i = 1; i < list.length; ++i)
 			if (i == list.length - 1)
 				argstr += list[i] + "";
 			else
 				argstr += list[i] + " ";
+		*/
 		for (Player p : list)
 			if (p.getName().contains(n)){
 				cnt = cnt + 1;
