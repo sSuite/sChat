@@ -1,4 +1,4 @@
-package tk.nekotech.sChat;
+package com.github.sSuite.sChat;
 
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -24,10 +24,10 @@ public class CmdHandler{
 	ChatColor white = ChatColor.WHITE;
 	ChatColor yellow = ChatColor.YELLOW;
 	// End colors
-	SChat p;
+	Main p;
 	String cmd;
 
-	public CmdHandler(SChat p){
+	public CmdHandler(Main p){
 		this.p = p;
 	}
 

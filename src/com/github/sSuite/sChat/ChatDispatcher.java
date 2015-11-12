@@ -1,18 +1,18 @@
-package tk.nekotech.sChat;
+package com.github.sSuite.sChat;
 
 import java.lang.reflect.Method;
 
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import tk.nekotech.sSuiteLib.ErrorHandling;
-import tk.nekotech.sSuiteLib.Logging;
+import com.github.sSuite.sLib.ErrorHandler;
+import com.github.sSuite.sLib.PluginLogger;
 
-public class ChatInformer{
+public class ChatDispatcher{
 
 	@SuppressWarnings("unused")
-	private ErrorHandling err;
-	private Logging log;
+	private ErrorHandler err;
+	private PluginLogger log;
 	@SuppressWarnings("unused")
 	private Method m;
 	public Object oo;
@@ -20,9 +20,9 @@ public class ChatInformer{
 	private Class<?>[] clist;
 	private int num = 0;
 
-	public ChatInformer(SChat p){
-		this.err = new ErrorHandling(p, SChat.cfg, "debugMode", "silentMode");
-		this.log = new Logging(p, SChat.cfg, "debugMode", "silentMode");
+	public ChatDispatcher(Main p){
+		this.err = new ErrorHandler(p, Main.cfg, "debugMode", "silentMode");
+		this.log = new PluginLogger(p, Main.cfg, "debugMode", "silentMode");
 	}
 
 	public int getListener(JavaPlugin jp, Class<?> c, String method){

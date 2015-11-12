@@ -1,13 +1,13 @@
-package tk.nekotech.sChat;
+package com.github.sSuite.sChat;
 
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 
 public class Formatter{
 
-	private SChat plugin;
+	private Main plugin;
 
-	public Formatter(SChat p){
+	public Formatter(Main p){
 		this.plugin = p;
 	}
 

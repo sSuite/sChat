@@ -1,4 +1,4 @@
 name: sChat
-authors: [Smiley43210, FunnyJ2]
-main: tk.nekotech.sChat.SChat
+author: Smiley43210
+main: com.github.sSuite.sChat
 version: 1.0

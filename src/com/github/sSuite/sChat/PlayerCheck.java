@@ -1,18 +1,20 @@
-package tk.nekotech.sChat;
+package com.github.sSuite.sChat;
+
+import java.util.Collection;
 
 import org.bukkit.entity.Player;
 
 public class PlayerCheck{
 
-	SChat p;
+	Main p;
 	Player r = null;
 
-	public PlayerCheck(SChat p){
+	public PlayerCheck(Main p){
 		this.p = p;
 	}
 
 	public Player check(String n){
-		Player[] list = p.getServer().getOnlinePlayers();
+		Collection<? extends Player> list = p.getServer().getOnlinePlayers();
 		@SuppressWarnings("unused")
 		String argstr = "";
 		int cnt = 0;

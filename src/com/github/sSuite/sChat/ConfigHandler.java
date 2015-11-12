@@ -1,4 +1,4 @@
-package tk.nekotech.sChat;
+package com.github.sSuite.sChat;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -7,12 +7,12 @@ import java.io.PrintWriter;
 
 import org.bukkit.configuration.Configuration;
 
-import tk.nekotech.sSuiteLib.ErrorHandling;
-import tk.nekotech.sSuiteLib.Logging;
+import com.github.sSuite.sLib.ErrorHandler;
+import com.github.sSuite.sLib.PluginLogger;
 
 public class ConfigHandler{
 
-	private final SChat sc;
+	private final Main sc;
 	private static Configuration cfg;
 	private final File cfgf = new File("plugins/sChat/config.yml");
 	private PrintWriter pw;
@@ -26,14 +26,14 @@ public class ConfigHandler{
 	//private boolean disableOnFinish;
 	private String cfgV;
 	private boolean devBuilds;
-	private final Logging log;
-	private final ErrorHandling err;
+	private final PluginLogger log;
+	private final ErrorHandler err;
 
-	public ConfigHandler(SChat sc){
+	public ConfigHandler(Main sc){
 		this.sc = sc;
 		cfg = sc.getConfig();
-		log = new Logging(sc, cfg, "debugMode", "silentMode");
-		err = new ErrorHandling(sc, cfg, "debugMode", "silentMode");
+		log = new PluginLogger(sc, cfg, "debugMode", "silentMode");
+		err = new ErrorHandler(sc, cfg, "debugMode", "silentMode");
 	}
 
 	public final void addComments(){

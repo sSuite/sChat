@@ -1,4 +1,4 @@
-package tk.nekotech.sChat;
+package com.github.sSuite.sChat;
 
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -8,10 +8,10 @@ import org.bukkit.event.player.PlayerJoinEvent;
 
 public class Listen implements Listener{
 
-	private SChat plugin;
+	private Main plugin;
 	private Formatter formatter;
 
-	public Listen(SChat instance){
+	public Listen(Main instance){
 		this.plugin = instance;
 	}
 
