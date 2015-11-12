@@ -1,0 +1,21 @@
+name: sChat
+authors: Smiley43210
+main: com.github.sSuite.sChat.Main
+version: 1.0
+depend: [sLib]
+commands:
+  whisper:
+    description: Privately messages player the specified message.
+    usage: /<command> [player] [message]
+  tell:
+    description: Privately messages player the specified message.
+    usage: /<command> [player] [message]
+  pm:
+    description: Privately messages player the specified message.
+    usage: /<command> [player] [message]
+  away:
+    description: Sets the player as away or not.
+    usage: /<command>
+  afk:
+    description: Sets the player as away or not.
+    usage: /<command>

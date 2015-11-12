@@ -1,4 +1,4 @@
 name: sChat
-author: Smiley43210
-main: com.github.sSuite.sChat
+authors: [Smiley43210, FunnyJ2]
+main: com.github.sSuite.sChat.Main
 version: 1.0
