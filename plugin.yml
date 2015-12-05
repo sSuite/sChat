@@ -1,9 +1,12 @@
 name: sChat
-authors: Smiley43210
+author: Smiley43210
 main: com.github.sSuite.sChat.Main
 version: 1.0
 depend: [sLib]
 commands:
+  schat:
+    description: sChat related commands.
+    usage: /<command>
   whisper:
     description: Privately messages player the specified message.
     usage: /<command> [player] [message]

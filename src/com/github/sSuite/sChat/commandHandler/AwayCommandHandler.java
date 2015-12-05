@@ -1,4 +1,4 @@
-package com.github.sSuite.sChat.commands;
+package com.github.sSuite.sChat.commandHandler;
 
 import java.util.ArrayList;
 import org.bukkit.ChatColor;
@@ -14,16 +14,17 @@ import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import com.github.sSuite.sChat.Main;
 
-public class AwayCommand implements Listener, CommandExecutor {
+public class AwayCommandHandler implements Listener, CommandExecutor {
 
 	private Main plugin;
 	private ArrayList<Player> afkList;
 
-	public AwayCommand(Main plugin) {
+	public AwayCommandHandler(Main plugin) {
 		this.plugin = plugin;
 		afkList = new ArrayList<Player>();
 	}
 
+	@Override
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 		if (!(sender instanceof Player)) {
 			plugin.logger.severe("Only players can use /afk!");

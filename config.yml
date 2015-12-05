@@ -1,11 +1,4 @@
-cfgV: "0.0.1"
-firstRun: true
-sendStats: true
-chat-format: <$prefix$player$suffix> $message
+#sChat configuration file
+
+chat-format: <<prefix><player><suffix>> <message>
 default-name-color: white
-players:
-    PlayerName:
-        prefix: $red[MyClass]
-        suffix: $blue[Donator]$white
-        name-color: green
-        chat-color: white
