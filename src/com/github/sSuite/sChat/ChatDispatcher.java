@@ -6,25 +6,25 @@ import java.util.ArrayList;
 import org.bukkit.configuration.Configuration;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
-import com.github.sSuite.sLib.ErrorHandler;
 import com.github.sSuite.sLib.PluginLogger;
 
 /**
  * @author Ethan
  *
  *         Event dispatcher so other plugins can listen to and capture chat
- *         events. Possibly not necessary.
+ *         events. Will be removed.
+ * 
+ *         Use Events instead. Bukkit.getPluginManager().callEvent(event); event
+ *         is then modified, for example, if something cancels it.
  */
 public class ChatDispatcher {
 
-	private ErrorHandler errorHandler;
 	private PluginLogger logger;
 	private ArrayList<Object> instances;
 	private ArrayList<Method> methods;
 
 	public ChatDispatcher(Main plugin, Configuration configuration) {
-		errorHandler = new ErrorHandler(plugin, configuration, "debugMode", "silentMode");
-		logger = new PluginLogger(plugin, configuration, "debugMode", "silentMode");
+		logger = new PluginLogger(plugin);
 	}
 
 	public boolean getListener(JavaPlugin listeningPlugin, Object object, String methodName) {
@@ -42,9 +42,9 @@ public class ChatDispatcher {
 			methods.add(method);
 			return true;
 		} catch (SecurityException e) {
-			errorHandler.printStackTrace(e);
+			logger.printStackTrace(e);
 		} catch (NoSuchMethodException e) {
-			errorHandler.printStackTrace(e);
+			logger.printStackTrace(e);
 		}
 		return false;
 	}
@@ -54,11 +54,11 @@ public class ChatDispatcher {
 			try {
 				methods.get(i).invoke(instances.get(i), player, message);
 			} catch (IllegalAccessException e) {
-				errorHandler.printStackTrace(e);
+				logger.printStackTrace(e);
 			} catch (IllegalArgumentException e) {
-				errorHandler.printStackTrace(e);
+				logger.printStackTrace(e);
 			} catch (InvocationTargetException e) {
-				errorHandler.printStackTrace(e);
+				logger.printStackTrace(e);
 			}
 		}
 	}

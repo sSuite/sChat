@@ -1,6 +1,5 @@
 package com.github.sSuite.sChat.commandHandler;
 
-import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -8,6 +7,7 @@ import com.github.sSuite.sChat.Main;
 import com.github.sSuite.sChat.command.AbstractCommand;
 import com.github.sSuite.sChat.command.schat.PlayerCommand;
 import com.github.sSuite.sChat.command.schat.ReloadCommand;
+import com.github.sSuite.sLib.utility.CommandHelpUtility;
 
 public class SubCommandHandler implements CommandExecutor {
 
@@ -42,19 +42,17 @@ public class SubCommandHandler implements CommandExecutor {
 				return true;
 		}
 
-		if (!commandClass.execute(sender, newArgs)) {
+		if (!commandClass.onExecute(sender, newArgs)) {
 			showHelp(sender);
 		}
 		return true;
 	}
 
 	private void showHelp(CommandSender sender) {
-		ChatColor gold = ChatColor.GOLD;
-
-		sender.sendMessage(ChatColor.GREEN + "---------------------/schat Help---------------------");
-		sender.sendMessage(gold + "/schat reload" + ChatColor.RESET + " - Reloads the configuration file");
-		sender.sendMessage(gold + "/schat player <player> set <prefix|suffix|color>" + ChatColor.RESET
-				+ " - Sets a setting for a player");
+		sender.sendMessage(CommandHelpUtility.createHeader("/schat Help", sender));
+		CommandHelpUtility.sendCommand("/schat reload", "Reloads the configuration file", sender, "schat.reload");
+		CommandHelpUtility.sendCommand("/schat player <player> set <prefix|suffix|color>",
+				"Sets a setting for a player", sender, "schat.player");
 	}
 
 }

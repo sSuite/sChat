@@ -16,13 +16,9 @@ public class PlayerCommand extends AbstractCommand {
 	}
 
 	@Override
-	public boolean execute(CommandSender sender, String[] args) {
+	public boolean onExecute(CommandSender sender, String[] args) {
 		if (args.length < 3) {
 			return false;
-		}
-		if (!hasPermission(sender)) {
-			sender.sendMessage(ChatColor.RED + "You do not have sufficient permissions to do that!");
-			return true;
 		}
 
 		OfflinePlayer targetPlayer = PlayerUtility.getOfflinePlayerByName(args[0]);

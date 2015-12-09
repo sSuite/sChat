@@ -63,20 +63,21 @@ public class MailCommandHandler implements Listener, CommandExecutor {
 				return true;
 		}
 
-		if (!commandClass.execute(sender, newArgs)) {
+		if (!commandClass.onExecute(sender, newArgs)) {
 			showHelp(sender);
 		}
 		return true;
 	}
 
 	private void showHelp(CommandSender sender) {
-		sender.sendMessage(CommandHelpUtility.createHeader("/mail", 22));
-		sender.sendMessage(CommandHelpUtility.createCommand("/mail list [page]", "Lists your messages"));
-		sender.sendMessage(CommandHelpUtility.createCommand("/mail send <player> <message>",
-				"Sends mail to the specified player"));
-		sender.sendMessage(CommandHelpUtility.createCommand("/mail read [messageID]", "Reads the specified message"));
-		sender.sendMessage(
-				CommandHelpUtility.createCommand("/mail delete [messageID]", "Deletes the specified message"));
+		CommandHelpUtility.sendHeader("/mail Help", sender);
+		CommandHelpUtility.sendCommand("/mail list [page]", "Lists your messages", sender, "schat.mail.receive");
+		CommandHelpUtility.sendCommand("/mail send <player> <message>", "Sends mail to the specified player", sender,
+				"schat.mail.send");
+		CommandHelpUtility.sendCommand("/mail read [messageID]", "Reads the specified message", sender,
+				"schat.mail.receive");
+		CommandHelpUtility.sendCommand("/mail delete [messageID]", "Deletes the specified message", sender,
+				"schat.mail.receive");
 	}
 
 	private String[] getMessages(Player player) {
@@ -91,8 +92,8 @@ public class MailCommandHandler implements Listener, CommandExecutor {
 		String[] playerMail = getMessages(event.getPlayer());
 
 		if (playerMail.length != 0) {
-			event.getPlayer().sendMessage(ChatColor.AQUA + "You have " + ChatColor.GREEN + playerMail.length
-					+ ChatColor.AQUA + " new message(s).");
+			event.getPlayer().sendMessage(ChatColor.GREEN + "You have " + ChatColor.AQUA + playerMail.length
+					+ ChatColor.GREEN + " new message(s).");
 			event.getPlayer()
 					.sendMessage("Use " + ChatColor.GOLD + "/mail list" + ChatColor.RESET + " to view all messages.");
 		}

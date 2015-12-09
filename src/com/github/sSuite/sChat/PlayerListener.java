@@ -70,8 +70,8 @@ public class PlayerListener implements Listener {
 		ConfigurationSection playerSection = playersSection
 				.getConfigurationSection(event.getPlayer().getUniqueId().toString());
 		if (playerSection != null) {
-			prefix = (playerSection.getString("prefix") == null ? "" : playerSection.getString("prefix"));
-			suffix = (playerSection.getString("suffix") == null ? "" : playerSection.getString("suffix"));
+			prefix = playerSection.getString("prefix") == null ? "" : playerSection.getString("prefix");
+			suffix = playerSection.getString("suffix") == null ? "" : playerSection.getString("suffix");
 			if (playerSection.getString("chat-format") != null) {
 				chatFormat = playerSection.getString("chat-format");
 			}

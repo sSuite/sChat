@@ -12,16 +12,12 @@ public class ReadCommand extends AbstractCommand {
 	}
 
 	@Override
-	public boolean execute(CommandSender sender, String[] args) {
+	public boolean onExecute(CommandSender sender, String[] args) {
 		if (args.length != 0) {
 			return false;
 		} else {
-			if (!hasPermission(sender)) {
-				sender.sendMessage(ChatColor.RED + "You do not have sufficient permissions to do that!");
-				return true;
-			}
-
 			getPlugin().reloadCustomConfig();
+
 			sender.sendMessage(ChatColor.GREEN + "Plugin configuration reloaded!");
 		}
 		return true;

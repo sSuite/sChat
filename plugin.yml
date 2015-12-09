@@ -9,16 +9,25 @@ commands:
     usage: /<command>
   whisper:
     description: Privately messages player the specified message.
-    usage: /<command> [player] [message]
-  tell:
-    description: Privately messages player the specified message.
-    usage: /<command> [player] [message]
-  pm:
-    description: Privately messages player the specified message.
+    aliases: [tell, pm]
     usage: /<command> [player] [message]
   away:
     description: Sets the player as away or not.
+    aliases: [afk]
     usage: /<command>
-  afk:
-    description: Sets the player as away or not.
+  mail:
+    description: Manages player mail.
     usage: /<command>
+permissions:
+  schat.reload:
+    description: Allows player to reload the configuration files.
+    default: op
+  schat.player:
+    description: Allows player to manage player settings.
+    default: op
+  schat.mail.send:
+    description: Allows player to send mail.
+    default: true
+  schat.mail.recieve:
+    description: Allows player to receive mail.
+    default: true
